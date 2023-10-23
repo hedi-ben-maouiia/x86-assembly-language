@@ -1,0 +1,50 @@
+
+#PUSH 
+Push quadword onto the stack
+
+* The push instruction automatically
+decrements the stack pointer, RSP, by 8
+* In 64-bit execution mode, operand can be 
+    - The value in a 64-bit register 
+    - A 64-bit value from memory, as given in "r/mX"
+form talked about next
+
+
+## "r/mX" Addressing Froms 1
+
+"r/mX" is term I made up to refer to anywhere you see "r/m8", r/m32
+
+
+## "r/mX" Addressing Froms 2
+ 
+
+* In Interl syntax, most of the time square brackeets []
+means to treat the value within as a memory address,
+and fetch the value at that address (like dereferncing a pointer)
+* An "r/mX" can take 4 forms:
+    1. Register -> rbx
+    2. Memory, base-only -> [rbx]
+    3. Memory, base+index*scale -> [rbx+rcx*X]
+        . For X = 1,2,4,8;
+    4. Memory, base+index*scale+displacement -> [rbx+rcx*X+Y]
+        . For Y of 1 byte (0-2^8) or 4 bytes(0-2^32)
+
+## "r/mX" Addressing Froms 3 
+    [base + index*scale + displacement]
+* Has natural applicability ot multidimensional array indexing, arrays of structs, etc 
+
+
+* So when I say in the future instructions support access to memory, 
+I mean memory as encoded in an "r/mX" ,
+I mean something that could be as simple as a single register , 
+or as complicated as a memroy address calculation in that form
+
+### "r/mX" Addressing Example 
+
+    push register 
+push rbx 
+    push memory 
+push [rbx]
+push [rbx+rcx*4]
+push [rbx+rcx*8+0x20]
+    

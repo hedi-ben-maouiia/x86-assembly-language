@@ -1,0 +1,6 @@
+# RET - Return from Procedure 
+* Two  forms 
+- Pop the top of the stack into RIP (remember, pop implicity increaments stack pointer,RSP)
+    - In this form, the instruction is just wirtten as "ret"
+- Pop the top of the stack into RIP and also add a constant number of bytes to RSP 
+    - In this form, the instruction is written as "ret 0x8", or "ret 0x20"
