@@ -1,8 +1,0 @@
-* NOP - No-Operation! NO registers, no values, no nothin'!
-* Just there to pad/align bytes, or to delay time 
-* Attackers use it to make simple exploits more reliable. But that's another class ;)
-* Amaze those who know x86 by citing this interesting bit of trivia:
-    *"The one-byte NOP instruction is an alias mnemonic for the XCHG (E)AX instruction."
-    * XCHG instruction is not offically in this class. but if i hadn't just tol you what it does, I bet you would have guessed right anyway
-    
-    0x90
