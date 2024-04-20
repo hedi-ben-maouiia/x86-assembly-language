@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 extern int test(int x,int y);
 
 
